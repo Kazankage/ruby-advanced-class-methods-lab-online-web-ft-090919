@@ -53,13 +53,13 @@ class Song
   
   def self.create_by_filename(filename)
     parts = filename.split(" - ")
-    artist_name = parts[0]
     song_name = parts[1].gsub(".mp3","")
-    
-      song = self.new 
-      song.name = song_name
+    artist_name = parts[0]
+      
+      song = self.new
+      song.name = song_name 
       song.artist_name = artist_name
-      song.save 
+      song
   end
     
 end
@@ -67,7 +67,7 @@ end
 
 
 
-song = Song.new_from_filename("Taylor Swift - Blank Space.mp3")
+song = Song.create_by_filename("Taylor Swift - Blank Space.mp3")
 print song.name #=> "Blank Space"
 puts
 print song.artist_name #=> "Taylor Swift"
