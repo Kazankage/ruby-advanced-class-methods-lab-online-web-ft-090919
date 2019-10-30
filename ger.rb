@@ -67,7 +67,7 @@ end
 
 
 
-song = Song.create_by_filename("Taylor Swift - Blank Space.mp3")
+song = Song.new_from_filename("Taylor Swift - Blank Space.mp3")
 print song.name #=> "Blank Space"
 puts
 print song.artist_name #=> "Taylor Swift"
